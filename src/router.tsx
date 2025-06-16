@@ -5,6 +5,7 @@ import DefaultLayout from "./components/layout";
 import Docs from "./pages/docs";
 import IconsPage from "./pages/docs/Icons";
 import DialogPage from "./pages/docs/feedback/dialog";
+import ToastPage from "./pages/docs/feedback/toast";
 
 interface RouteType {
   name: string;
@@ -41,7 +42,10 @@ export const routes: RoutesType[] = [
   },
   {
     label: "feedback",
-    route: [{ name: "dialog", path: "/docs/dialog" }],
+    route: [
+      { name: "dialog", path: "/docs/dialog" },
+      { name: "toast", path: "/docs/toast" },
+    ],
   },
 ];
 
@@ -55,6 +59,7 @@ const Router = () => {
           <Route path="introduction" element={<Docs />} />
           <Route path="icons" element={<IconsPage />} />
           <Route path="dialog" element={<DialogPage />} />
+          <Route path="toast" element={<ToastPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
