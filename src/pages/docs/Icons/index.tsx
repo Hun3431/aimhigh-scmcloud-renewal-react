@@ -66,7 +66,6 @@ const Example = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <h1 className="text-2xl font-bold mb-4">Icons</h1>
       <p className="mb-4 whitespace-pre-wrap">
         {`이 페이지에서는 다양한 아이콘 컴포넌트를 소개합니다. 각 아이콘은 크기, 색상, 채우기 상태 등을 props를 통해 조절할 수 있습니다.
 
