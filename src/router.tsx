@@ -6,6 +6,7 @@ import Docs from "./pages/docs";
 import IconsPage from "./pages/docs/Icons";
 import DialogPage from "./pages/docs/feedback/dialog";
 import ToastPage from "./pages/docs/feedback/toast";
+import MenuPage from "./pages/docs/component/menu";
 
 interface RouteType {
   name: string;
@@ -47,6 +48,13 @@ export const routes: RoutesType[] = [
       { name: "toast", path: "/docs/toast" },
     ],
   },
+  {
+    label: "component",
+    route: [
+      { name: "menu", path: "/docs/menu" },
+      // { name: "container", path: "/docs/container" },
+    ],
+  },
 ];
 
 const Router = () => {
@@ -60,6 +68,8 @@ const Router = () => {
           <Route path="icons" element={<IconsPage />} />
           <Route path="dialog" element={<DialogPage />} />
           <Route path="toast" element={<ToastPage />} />
+          <Route path="menu" element={<MenuPage />} />
+          {/* <Route path="container" element={<Docs />} /> */}
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
