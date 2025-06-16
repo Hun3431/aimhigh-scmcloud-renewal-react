@@ -4,7 +4,7 @@ import Viewer from "../../../../components/viewer";
 import CodeBlock from "../../../../components/codeBlock";
 
 const toastCode = `import { useSetAtom } from "jotai";
-import { centerToastAtom } from "@/components/feedback/toast copy/atom";
+import { centerToastAtom } from "@/components/feedback/centerToast/atom";
 
 const Example = () => {
   const setToast = useSetAtom(centerToastAtom);
@@ -20,7 +20,9 @@ const Example = () => {
   return (
     <button
       className="bg-white border border-gray-300 rounded-lg px-4 py-2"
-      onClick={handleClick}
+      onClick={
+        handleCopy("이것은 클립보드에 복사된 메시지입니다.");
+      }
     >
       Open Toast
     </button>
