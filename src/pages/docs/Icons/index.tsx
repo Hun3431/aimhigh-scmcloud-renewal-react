@@ -1,5 +1,5 @@
 import { Block } from "@uiw/react-color";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   ArrowLogoutIcon,
   CalendarCheckIcon,
