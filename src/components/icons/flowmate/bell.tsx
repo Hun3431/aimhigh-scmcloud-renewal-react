@@ -1,6 +1,6 @@
 import { IconProps } from "./type";
 
-const NotificationBellIcon = ({
+const BellIcon = ({
   size = 24,
   color = "currentColor",
   ...props
@@ -20,4 +20,4 @@ const NotificationBellIcon = ({
   </svg>
 );
 
-export default NotificationBellIcon;
+export default BellIcon;

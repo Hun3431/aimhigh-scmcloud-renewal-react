@@ -1,6 +1,6 @@
 import { IconProps } from "./type";
 
-const ShieldMailIcon = ({
+const OpenBoxIcon = ({
   size = 24,
   color = "currentColor",
   ...props
@@ -20,4 +20,4 @@ const ShieldMailIcon = ({
   </svg>
 );
 
-export default ShieldMailIcon;
+export default OpenBoxIcon;

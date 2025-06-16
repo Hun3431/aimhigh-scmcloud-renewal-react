@@ -2,6 +2,7 @@ import { Block } from "@uiw/react-color";
 import { useEffect, useState } from "react";
 import {
   ArrowLogoutIcon,
+  CalendarCheckIcon,
   CalendarIcon,
   CheckListIcon,
   ClockIcon,
@@ -9,54 +10,110 @@ import {
   DocumentCheckIcon,
   DocumentListIcon,
   DocumentLockIcon,
+  ShareSquareIcon,
   FileIcon,
   FormIcon,
   MenuIcon,
-  NotificationBellIcon,
+  BellIcon,
   OfferAmountIcon,
+  PlusCircleIcon,
+  PlusSearchIcon,
+  QuestionCircleIcon,
   ReportIcon,
-  ShieldMailIcon,
+  MinusSearchIcon,
+  FullScreenIcon,
+  OpenBoxIcon,
+  TrashIcon,
   TruckIcon,
+  FilterIcon,
 } from "../../../components/icons/flowmate";
 import { Highlight, themes } from "prism-react-renderer";
 import { cn } from "cn-func";
+import ArrowIcon from "../../../components/icons/arrowIcon";
 
 const IconComponents = [
+  ArrowIcon,
   ArrowLogoutIcon,
   CalendarIcon,
+  CalendarCheckIcon,
   CheckListIcon,
   ClockIcon,
   CodeIcon,
   DocumentCheckIcon,
   DocumentListIcon,
   DocumentLockIcon,
+  ShareSquareIcon,
   FileIcon,
   FormIcon,
   MenuIcon,
-  NotificationBellIcon,
+  BellIcon,
   OfferAmountIcon,
+  PlusCircleIcon,
+  PlusSearchIcon,
+  QuestionCircleIcon,
   ReportIcon,
-  ShieldMailIcon,
+  MinusSearchIcon,
+  FullScreenIcon,
+  OpenBoxIcon,
+  TrashIcon,
   TruckIcon,
+  FilterIcon,
 ];
 
+// ArrowIcon,
+// ArrowLogoutIcon,
+// CalendarIcon,
+// CalendarCheckIcon,
+// CheckListIcon,
+// ClockIcon ,
+// CodeIcon,
+// DocumentCheckIcon,
+// DocumentListIcon,
+// DocumentLockIcon,
+// EditSquare,
+// FileIcon,
+// FormIcon,
+// MenuIcon,
+// BellIcon,
+// OfferAmountIcon,
+// PlusCircleIcon,
+// PlusSearchIcon,
+// QuestionCircle,
+// ReportIcon,
+// SearchIcon,
+// FullScreenIcon,
+// OpenBoxIcon,
+// TrashIcon ,
+// TruckIcon ,
+// FilterIcon,
+
 const IconNames = [
+  "ArrowIcon",
   "ArrowLogoutIcon",
   "CalendarIcon",
+  "CalendarCheckIcon",
   "CheckListIcon",
   "ClockIcon",
   "CodeIcon",
   "DocumentCheckIcon",
   "DocumentListIcon",
   "DocumentLockIcon",
+  "ShareSquareIcon",
   "FileIcon",
   "FormIcon",
   "MenuIcon",
-  "NotificationBellIcon",
+  "BellIcon",
   "OfferAmountIcon",
+  "PlusCircleIcon",
+  "PlusSearchIcon",
+  "QuestionCircleIcon",
   "ReportIcon",
-  "ShieldMailIcon",
+  "MinusSearchIcon",
+  "FullScreenIcon",
+  "OpenBoxIcon",
+  "TrashIcon",
   "TruckIcon",
+  "FilterIcon",
 ];
 
 const addIconCode = `import IconProps from "./type;
@@ -89,11 +146,15 @@ const IconsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIconIndex, setSelectedIconIndex] = useState<number>(0);
 
-  const code = `import { ${IconNames[selectedIconIndex]} } from "@components/icons/flowmate";
+  const code = `import { ${
+    IconNames[selectedIconIndex]
+  } } from "@components/icons/flowmate";
             
 const Example = () => {
   return (
-    <${IconNames[selectedIconIndex]} size={32} color="${hex}" />
+    <${IconNames[selectedIconIndex]} ${
+    IconNames[selectedIconIndex] === "ArrowIcon" && `direction="left " `
+  }size={32} color="${hex}" />
   );
 }`;
 
