@@ -148,7 +148,7 @@ const CodeBlock = ({ code }: { code: string }) => {
         <pre className={cn("whitespace-pre-wrap p-4", className)} style={style}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line })}>
-              <span>{i + 1}</span>
+              <span>{i + 1} </span>
               {line.map((token, key) => (
                 <span key={key} {...getTokenProps({ token })} />
               ))}
