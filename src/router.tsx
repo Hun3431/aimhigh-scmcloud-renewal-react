@@ -3,6 +3,7 @@ import MainPage from "./pages/main";
 import NotFoundPage from "./pages/notfound";
 import DefaultLayout from "./components/layout";
 import Docs from "./pages/docs";
+import IconsPage from "./pages/docs/Icons";
 
 interface RouteType {
   name: string;
@@ -21,6 +22,10 @@ export const routes: RoutesType[] = [
       { name: "introduction", path: "/docs/introduction" },
       { name: "getting started", path: "/docs/getting-started" },
     ],
+  },
+  {
+    label: "icon",
+    route: [{ name: "icons", path: "/docs/icons" }],
   },
   {
     label: "form",
@@ -47,6 +52,7 @@ const Router = () => {
         <Route path="docs" element={<DefaultLayout />}>
           <Route index element={<Docs />} />
           <Route path="introduction" element={<Docs />} />
+          <Route path="icons" element={<IconsPage />} />
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />

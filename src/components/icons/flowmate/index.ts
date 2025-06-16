@@ -1,0 +1,16 @@
+export { default as ArrowLogoutIcon } from "./arrowLogout";
+export { default as CalendarIcon } from "./calendar";
+export { default as CheckListIcon } from "./checkList";
+export { default as ClockIcon } from "./clock";
+export { default as CodeIcon } from "./code";
+export { default as DocumentCheckIcon } from "./documentCheck";
+export { default as DocumentListIcon } from "./documentList";
+export { default as DocumentLockIcon } from "./documentLock";
+export { default as FileIcon } from "./file";
+export { default as FormIcon } from "./form";
+export { default as MenuIcon } from "./menu";
+export { default as NotificationBellIcon } from "./notificationBell";
+export { default as OfferAmountIcon } from "./offerAmount";
+export { default as ReportIcon } from "./report";
+export { default as ShieldMailIcon } from "./shieldMail";
+export { default as TruckIcon } from "./truck";
