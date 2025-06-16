@@ -20,7 +20,11 @@ const Container = ({
       id={id}
       style={style}
       onClick={onClick}
-      className={cn("flex-1 flex flex-col gap-3 p-6 bg-white", className)}
+      className={cn(
+        "flex-1 flex flex-col gap-3",
+        "p-6 bg-white rounded-2xl",
+        className
+      )}
     >
       {children}
     </div>
