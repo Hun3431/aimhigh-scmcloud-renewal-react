@@ -59,6 +59,31 @@ const IconNames = [
   "TruckIcon",
 ];
 
+const addIconCode = `import IconProps from "./type;
+
+const ExampleIcon = ({
+  size = 24,
+  color = "currentColor",
+  ...props
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="input your svg path here"
+      fill={color}
+    />
+  </svg>
+);
+
+export default ExampleIcon;`;
+const addIndexCode = `export { default as ExampleIcon } from "./example";`;
+
 const IconsPage = () => {
   const [hex, setHex] = useState("#555555");
   const [isOpen, setIsOpen] = useState(false);
@@ -80,12 +105,8 @@ const Example = () => {
     setSelectedIconIndex(index);
   };
 
-  const handleCopyCode = () => {
-    navigator.clipboard.writeText(code);
-  };
-
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 pb-6">
       <p className="mb-4 whitespace-pre-wrap">
         {`이 페이지에서는 다양한 아이콘 컴포넌트를 소개합니다. 각 아이콘은 크기, 색상, 채우기 상태 등을 props를 통해 조절할 수 있습니다.
 
@@ -124,17 +145,21 @@ const Example = () => {
         ))}
       </div>
       <div className="flex flex-col gap-2 my-4">
-        <div className="text-xl font-bold">Usage</div>
-        <div className="bg-gray-100 rounded-lg">
-          <div className="relative flex flex-row justify-between p-4 border-b border-gray-300">
-            <div>example.tsx</div>
-            <button className="relative pl-1 pb-1" onClick={handleCopyCode}>
-              <div className="w-3.5 h-4.5 border-2 bg-white border-[#555] rounded-xs" />
-              <div className="absolute top-1 right-1 w-3.5 h-4.5 bg-white border-2 border-[#555] rounded-xs" />
-            </button>
-          </div>
-          <CodeBlock code={code} />
-        </div>
+        <CodeBlock title="Usage" path="example.tsx" code={code} />
+      </div>
+      <div className="flex flex-col gap-2 my-4">
+        <CodeBlock
+          title="AddIcon"
+          path="@components/icons/flowmate/example.tsx"
+          code={addIconCode}
+        />
+        <CodeBlock
+          path="@components/icons/flowmate/index.ts"
+          code={addIndexCode}
+        />
+      </div>
+      <div className="text-red-400 font-semibold">
+        저장 위치에 따라 import 경로가 달라질 수 있습니다.
       </div>
     </div>
   );
@@ -149,7 +174,7 @@ const IconWrapper = ({
 }) => {
   return (
     <div
-      className="flex flex-row items-center gap-2 py-2 px-3 rounded-lg bg-gray-50 hover:bg-gray-200 text-xs font-semibold min-w-46 cursor-pointer"
+      className="flex flex-row items-center gap-2 py-2 px-3 rounded-lg bg-gray-50 hover:bg-gray-200 text-xs font-semibold min-w-52 cursor-pointer"
       onClick={onClick}
     >
       {children}
@@ -157,22 +182,54 @@ const IconWrapper = ({
   );
 };
 
-const CodeBlock = ({ code }: { code: string }) => {
+const CodeBlock = ({
+  title,
+  path,
+  code,
+}: {
+  title?: string;
+  path?: string;
+  code: string;
+}) => {
+  const handleCopyCode = (text: string) => {
+    navigator.clipboard.writeText(text);
+  };
+
   return (
-    <Highlight theme={themes.oneLight} language="tsx" code={code}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={cn("whitespace-pre-wrap p-4", className)} style={style}>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line })}>
-              <span>{i + 1} </span>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token })} />
+    <>
+      {title && <div className="text-xl font-bold">{title}</div>}
+      <div className="bg-gray-100 rounded-lg overflow-hidden">
+        <div className="relative flex flex-row justify-between p-4 border-b border-gray-300">
+          <div>{path}</div>
+          <button
+            className="relative pl-1 pb-1"
+            onClick={() => {
+              handleCopyCode(addIndexCode);
+            }}
+          >
+            <div className="w-3.5 h-4.5 border-2 bg-white border-[#555] rounded-xs" />
+            <div className="absolute top-1 right-1 w-3.5 h-4.5 bg-white border-2 border-[#555] rounded-xs" />
+          </button>
+        </div>
+        <Highlight theme={themes.oneLight} language="tsx" code={code}>
+          {({ className, style, tokens, getLineProps, getTokenProps }) => (
+            <pre
+              className={cn("whitespace-pre-wrap p-4", className)}
+              style={style}
+            >
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line })}>
+                  <span>{i + 1} </span>
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token })} />
+                  ))}
+                </div>
               ))}
-            </div>
-          ))}
-        </pre>
-      )}
-    </Highlight>
+            </pre>
+          )}
+        </Highlight>
+      </div>
+    </>
   );
 };
 
