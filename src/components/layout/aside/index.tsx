@@ -26,9 +26,9 @@ const Aside = () => {
               }}
               className={cn(
                 "flex flex-row justify-start items-center",
-                "w-full h-10 px-2 hover:bg-gray-95 border-dotted rounded-lg",
-                "text-black hover:text-gray-10 truncate capitalize",
-                location.pathname === route.path && "bg-gray-95 text-gray-10"
+                "w-full h-10 px-2 hover:bg-gray-50 border-dotted rounded-lg",
+                "text-black truncate capitalize",
+                location.pathname === route.path && "bg-gray-50"
               )}
             >
               {route.name}
