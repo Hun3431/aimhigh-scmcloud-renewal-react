@@ -5,7 +5,7 @@
  * 크기, 색상, 채우기 상태 등을 props를 통해 조절할 수 있습니다.
  */
 
-import { IconPropsType } from "../../types/Icon";
+import { IconPropsType } from "./type";
 
 /**
  * HeartIcon 컴포넌트

@@ -5,7 +5,7 @@
  * 크기, 색상, 선 두께, 방향 등을 props를 통해 조절할 수 있습니다.
  */
 
-import { IconPropsType } from "../../types/Icon";
+import { IconPropsType } from "./type";
 
 type Direction = "left" | "right" | "up" | "down";
 
