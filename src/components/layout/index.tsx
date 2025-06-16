@@ -9,11 +9,11 @@ const DefaultLayout = () => {
       <div className="flex flex-row justify-center w-full min-w-2xs">
         <Header />
       </div>
-      <div className="grow flex flex-row justify-center w-full min-w-2xs">
+      <div className="flex-1 flex flex-row justify-center w-full min-w-2xs">
         <main className="flex flex-row justify-start w-full max-w-7xl min-w-2xs h-[calc(100dvh-56px)] xl:border-x border-gray-95 border-dotted">
           <Aside />
-          <div className="flex-1 p-6 sm:ml-60 border-l border-gray-95 border-dotted">
-            <div className="flex flex-col gap-4 mx-auto min-w-2xs w-full">
+          <div className="flex-1 px-6 sm:ml-60 border-l border-gray-95 border-dotted">
+            <div className="flex flex-col gap-4 mx-auto min-w-2xs w-full h-full overflow-y-scroll">
               <DocsTitle />
               <Outlet />
             </div>

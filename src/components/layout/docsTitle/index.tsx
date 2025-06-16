@@ -8,7 +8,7 @@ const DocsTitle = () => {
   const title = path[path.length - 1];
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 pt-6">
       <div className="flex flex-row items-center gap-2 text-base text-gray-60">
         {path.map((value, index) =>
           path.length - 1 === index ? (
