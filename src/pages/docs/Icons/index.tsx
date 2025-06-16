@@ -21,29 +21,56 @@ import {
 import { Highlight, themes } from "prism-react-renderer";
 import { cn } from "cn-func";
 
-const Icons = [
-  <ArrowLogoutIcon size={32} />,
-  <CalendarIcon size={32} />,
-  <CheckListIcon size={32} />,
-  <ClockIcon size={32} />,
-  <CodeIcon size={32} />,
-  <DocumentCheckIcon size={32} />,
-  <DocumentListIcon size={32} />,
-  <DocumentLockIcon size={32} />,
-  <FileIcon size={32} />,
-  <FormIcon size={32} />,
-  <MenuIcon size={32} />,
-  <NotificationBellIcon size={32} />,
-  <OfferAmountIcon size={32} />,
-  <ReportIcon size={32} />,
-  <ShieldMailIcon size={32} />,
-  <TruckIcon size={32} />,
+const IconComponents = [
+  ArrowLogoutIcon,
+  CalendarIcon,
+  CheckListIcon,
+  ClockIcon,
+  CodeIcon,
+  DocumentCheckIcon,
+  DocumentListIcon,
+  DocumentLockIcon,
+  FileIcon,
+  FormIcon,
+  MenuIcon,
+  NotificationBellIcon,
+  OfferAmountIcon,
+  ReportIcon,
+  ShieldMailIcon,
+  TruckIcon,
+];
+
+const IconNames = [
+  "ArrowLogoutIcon",
+  "CalendarIcon",
+  "CheckListIcon",
+  "ClockIcon",
+  "CodeIcon",
+  "DocumentCheckIcon",
+  "DocumentListIcon",
+  "DocumentLockIcon",
+  "FileIcon",
+  "FormIcon",
+  "MenuIcon",
+  "NotificationBellIcon",
+  "OfferAmountIcon",
+  "ReportIcon",
+  "ShieldMailIcon",
+  "TruckIcon",
 ];
 
 const IconsPage = () => {
   const [hex, setHex] = useState("#555555");
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIconIndex, setSelectedIconIndex] = useState<number>(0);
+
+  const code = `import { ${IconNames[selectedIconIndex]} } from "@components/icons/flowmate";
+            
+const Example = () => {
+  return (
+    <${IconNames[selectedIconIndex]} size={32} color="${hex}" />
+  );
+}`;
 
   useEffect(() => {
     setIsOpen(false);
@@ -54,13 +81,6 @@ const IconsPage = () => {
   };
 
   const handleCopyCode = () => {
-    const code = `import { ${Icons[selectedIconIndex].type.name} } from "@components/icons/flowmate";
-            
-const Example = () => {
-  return (
-    <${Icons[selectedIconIndex].type.name} size={32} color="${hex}" />
-  );
-}`;
     navigator.clipboard.writeText(code);
   };
 
@@ -94,9 +114,12 @@ const Example = () => {
         )}
       </div>
       <div className="flex flex-wrap gap-4" style={{ color: hex }}>
-        {Icons.map((Icon, index) => (
+        {IconComponents.map((Icon, index) => (
           <IconWrapper key={index} onClick={() => handleIconClick(index)}>
-            {Icon}
+            <Icon size={32} />
+            <div className="flex-1 text-center text-gray-600 mt-1">
+              {IconNames[index]}
+            </div>
           </IconWrapper>
         ))}
       </div>
@@ -110,14 +133,7 @@ const Example = () => {
               <div className="absolute top-1 right-1 w-3.5 h-4.5 bg-white border-2 border-[#555] rounded-xs" />
             </button>
           </div>
-          <CodeBlock
-            code={`import { ${Icons[selectedIconIndex].type.name} } from "@components/icons/flowmate";
-const Example = () => {
-  return (
-    <${Icons[selectedIconIndex].type.name} size={32} color="${hex}" />
-  );
-}`}
-          />
+          <CodeBlock code={code} />
         </div>
       </div>
     </div>
@@ -133,7 +149,7 @@ const IconWrapper = ({
 }) => {
   return (
     <div
-      className="flex items-center justify-center p-2 rounded-lg hover:bg-gray-100"
+      className="flex flex-row items-center gap-2 py-2 px-3 rounded-lg bg-gray-50 hover:bg-gray-200 text-xs font-semibold min-w-46 cursor-pointer"
       onClick={onClick}
     >
       {children}
