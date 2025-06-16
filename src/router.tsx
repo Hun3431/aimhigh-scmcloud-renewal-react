@@ -8,6 +8,7 @@ import DialogPage from "./pages/docs/feedback/dialog";
 import ToastPage from "./pages/docs/feedback/toast";
 import MenuPage from "./pages/docs/component/menu";
 import ContainerPage from "./pages/docs/component/container";
+import CenterToastPage from "./pages/docs/feedback/centerToast";
 
 interface RouteType {
   name: string;
@@ -47,6 +48,7 @@ export const routes: RoutesType[] = [
     route: [
       { name: "dialog", path: "/docs/dialog" },
       { name: "toast", path: "/docs/toast" },
+      { name: "centerToast", path: "/docs/centerToast" },
     ],
   },
   {
@@ -69,6 +71,7 @@ const Router = () => {
           <Route path="icons" element={<IconsPage />} />
           <Route path="dialog" element={<DialogPage />} />
           <Route path="toast" element={<ToastPage />} />
+          <Route path="centerToast" element={<CenterToastPage />} />
           <Route path="menu" element={<MenuPage />} />
           <Route path="container" element={<ContainerPage />} />
         </Route>
