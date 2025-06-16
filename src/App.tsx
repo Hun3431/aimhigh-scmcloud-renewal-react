@@ -1,7 +1,13 @@
+import GlobalDialog from "./components/feedback/dialog";
 import Router from "./router";
 
 const App = () => {
-  return <Router />;
+  return (
+    <>
+      <Router />
+      <GlobalDialog />
+    </>
+  );
 };
 
 export default App;

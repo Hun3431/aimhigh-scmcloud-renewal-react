@@ -4,6 +4,7 @@ import NotFoundPage from "./pages/notfound";
 import DefaultLayout from "./components/layout";
 import Docs from "./pages/docs";
 import IconsPage from "./pages/docs/Icons";
+import DialogPage from "./pages/docs/feedback/dialog";
 
 interface RouteType {
   name: string;
@@ -40,9 +41,7 @@ export const routes: RoutesType[] = [
   },
   {
     label: "feedback",
-    route: [
-      // { name: "dialog", path: "/docs/dialog" }
-    ],
+    route: [{ name: "dialog", path: "/docs/dialog" }],
   },
 ];
 
@@ -55,8 +54,8 @@ const Router = () => {
           <Route index element={<Docs />} />
           <Route path="introduction" element={<Docs />} />
           <Route path="icons" element={<IconsPage />} />
+          <Route path="dialog" element={<DialogPage />} />
         </Route>
-
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
