@@ -14,6 +14,7 @@
     "@tailwindcss/vite": "^4.0.1",
     "@uiw/react-color": "^2.5.5",
     "cn-func": "^1.0.1",
+    "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
     "react-color": "^2.19.3",
     "react-dom": "^19.0.0",

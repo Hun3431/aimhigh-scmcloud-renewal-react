@@ -18,6 +18,8 @@ import {
   ShieldMailIcon,
   TruckIcon,
 } from "../../../components/icons/flowmate";
+import { Highlight, themes } from "prism-react-renderer";
+import { cn } from "cn-func";
 
 const Icons = [
   <ArrowLogoutIcon size={32} />,
@@ -109,15 +111,14 @@ const Example = () => {
               <div className="absolute top-1 right-1 w-3.5 h-4.5 bg-white border-2 border-[#555] rounded-xs" />
             </button>
           </div>
-          <pre className="whitespace-pre-wrap p-4">
-            {`import { ${Icons[selectedIconIndex].type.name} } from "@components/icons/flowmate";
-            
+          <CodeBlock
+            code={`import { ${Icons[selectedIconIndex].type.name} } from "@components/icons/flowmate";
 const Example = () => {
   return (
     <${Icons[selectedIconIndex].type.name} size={32} color="${hex}" />
   );
 }`}
-          </pre>
+          />
         </div>
       </div>
     </div>
@@ -138,6 +139,25 @@ const IconWrapper = ({
     >
       {children}
     </div>
+  );
+};
+
+const CodeBlock = ({ code }: { code: string }) => {
+  return (
+    <Highlight theme={themes.oneLight} language="tsx" code={code}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={cn("whitespace-pre-wrap p-4", className)} style={style}>
+          {tokens.map((line, i) => (
+            <div key={i} {...getLineProps({ line })}>
+              <span>{i + 1}</span>
+              {line.map((token, key) => (
+                <span key={key} {...getTokenProps({ token })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
   );
 };
 

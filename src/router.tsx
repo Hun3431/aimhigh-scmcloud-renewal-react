@@ -30,17 +30,19 @@ export const routes: RoutesType[] = [
   {
     label: "form",
     route: [
-      { name: "button", path: "/docs/button" },
-      { name: "input", path: "/docs/input" },
-      { name: "label", path: "/docs/label" },
-      { name: "textarea", path: "/docs/textarea" },
-      { name: "radio", path: "/docs/radio" },
-      { name: "select", path: "/docs/select" },
+      // { name: "button", path: "/docs/button" },
+      // { name: "input", path: "/docs/input" },
+      // { name: "label", path: "/docs/label" },
+      // { name: "textarea", path: "/docs/textarea" },
+      // { name: "radio", path: "/docs/radio" },
+      // { name: "select", path: "/docs/select" },
     ],
   },
   {
     label: "feedback",
-    route: [{ name: "dialog", path: "/docs/dialog" }],
+    route: [
+      // { name: "dialog", path: "/docs/dialog" }
+    ],
   },
 ];
 
