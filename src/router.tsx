@@ -20,7 +20,7 @@ export const routes: RoutesType[] = [
     label: "docs",
     route: [
       { name: "introduction", path: "/docs/introduction" },
-      { name: "getting started", path: "/docs/getting-started" },
+      // { name: "getting started", path: "/docs/getting-started" },
     ],
   },
   {

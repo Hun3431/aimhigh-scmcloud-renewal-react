@@ -14,12 +14,13 @@ const Header = () => {
         "border-b xl:border-x border-gray-95 border-dotted"
       )}
     >
-      <img
-        src="/favicon.ico"
+      <div>Logo</div>
+      {/* <img
+        src={"/favicon.ico"}
         alt="logo"
         width={80}
         className="mt-2 hidden sm:block"
-      />
+      /> */}
       <button className="w-5 h-5 px-0.5 py-1 sm:hidden flex flex-col justify-between">
         <div className="w-full h-0.5 bg-gray-20 rounded-full" />
         <div className="w-full h-0.5 bg-gray-20 rounded-full" />
