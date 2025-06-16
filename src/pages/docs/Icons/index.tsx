@@ -157,10 +157,6 @@ const Example = () => {
   );
 }`;
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [hex]);
-
   const handleIconClick = (index: number) => {
     setSelectedIconIndex(index);
   };
@@ -184,7 +180,7 @@ const Example = () => {
         {isOpen && (
           <>
             <Block
-              className="absolute top-[100%] translate-y-3 left-[13px] z-10"
+              className="absolute top-[100%] -translate-y-3 left-[13px] z-10"
               color={hex}
               onChange={(color) => {
                 setHex(color.hex);
