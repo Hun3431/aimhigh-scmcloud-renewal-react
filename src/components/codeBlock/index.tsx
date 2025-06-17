@@ -1,5 +1,7 @@
 import { Highlight, themes } from "prism-react-renderer";
 import { cn } from "cn-func";
+import { useSetAtom } from "jotai";
+import { centerToastAtom } from "../feedback/toast copy/atom";
 
 const CodeBlock = ({
   title,
@@ -10,8 +12,24 @@ const CodeBlock = ({
   path?: string;
   code: string;
 }) => {
+  const setToast = useSetAtom(centerToastAtom);
   const handleCopyCode = (text: string) => {
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(text).then(
+      () => {
+        setToast({
+          content: <>📋 클립보드에 복사되었습니다!</>,
+          isOpen: true,
+          duration: 1500,
+        });
+      },
+      (err) => {
+        setToast({
+          content: <>❌ 클립보드 복사에 실패했습니다: {err.message}</>,
+          isOpen: true,
+          duration: 2000,
+        });
+      }
+    );
   };
 
   return (
