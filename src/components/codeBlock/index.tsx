@@ -38,7 +38,7 @@ const CodeBlock = ({
             >
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })}>
-                  <span>{i + 1} </span>
+                  <span className="select-none">{i + 1} </span>
                   {line.map((token, key) => (
                     <span key={key} {...getTokenProps({ token })} />
                   ))}
