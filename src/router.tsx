@@ -11,6 +11,7 @@ import ContainerPage from "./pages/docs/component/container";
 import CenterToastPage from "./pages/docs/feedback/centerToast";
 import ButtonPage from "./pages/docs/form/button";
 import InputPage from "./pages/docs/form/input";
+import TagPage from "./pages/docs/form/tag";
 
 interface RouteType {
   name: string;
@@ -39,7 +40,7 @@ export const routes: RoutesType[] = [
     route: [
       { name: "button", path: "/docs/button" },
       { name: "input", path: "/docs/input" },
-      // { name: "label", path: "/docs/label" },
+      { name: "tag", path: "/docs/tag" },
       // { name: "textarea", path: "/docs/textarea" },
       // { name: "radio", path: "/docs/radio" },
       // { name: "select", path: "/docs/select" },
@@ -73,7 +74,7 @@ const Router = () => {
           <Route path="icons" element={<IconsPage />} />
           <Route path="button" element={<ButtonPage />} />
           <Route path="input" element={<InputPage />} />
-          {/* <Route path="label" element={<LabelPage />} /> */}
+          <Route path="tag" element={<TagPage />} />
           {/* <Route path="textarea" element={<TextareaPage />} /> */}
           {/* <Route path="radio" element={<RadioPage />} /> */}
           {/* <Route path="select" element={<SelectPage />} /> */}
