@@ -2,6 +2,7 @@ import { useState } from "react";
 import CodeBlock from "../../../../components/codeBlock";
 import Viewer from "../../../../components/viewer";
 import Input from "../../../../components/form/input";
+import SetInputCode from "../../../../components/form/input?raw";
 
 const inputCode = `import Input from "@components/form/input";
 
@@ -60,6 +61,11 @@ const InputPage = () => {
       </Viewer>
       <div className="flex flex-col gap-2 my-4">
         <CodeBlock title="Usage" path="example.tsx" code={inputCode} />
+        <CodeBlock
+          title="SetInputCode"
+          path="components/form/input/index.tsx"
+          code={SetInputCode}
+        />
       </div>
     </div>
   );

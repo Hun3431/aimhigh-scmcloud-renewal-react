@@ -2,6 +2,9 @@ import CodeBlock from "../../../../components/codeBlock";
 import { Menu } from "../../../../components/component/menu";
 import { FileIcon, FormIcon } from "../../../../components/icons/flowmate";
 import Viewer from "../../../../components/viewer";
+import SetMenuCode from "../../../../components/component/menu?raw";
+import SetMenuItemCode from "../../../../components/component/menu/item?raw";
+import SetMenuGroupCode from "../../../../components/component/menu/group?raw";
 
 const MenuCode = `import { Menu } from "@components/component/menu";
 import { FormIcon } from "@components/icons/flowmate";
@@ -51,6 +54,19 @@ const MenuPage = () => {
       </div>
       <div className="flex flex-col gap-2 my-4">
         <CodeBlock title="Usage" path="example.tsx" code={MenuCode} />
+        <CodeBlock
+          title="SetMenuCode"
+          path="@components/component/menu?raw"
+          code={SetMenuCode}
+        />
+        <CodeBlock
+          path="@components/component/menu/item?raw"
+          code={SetMenuItemCode}
+        />
+        <CodeBlock
+          path="@components/component/menu/group?raw"
+          code={SetMenuGroupCode}
+        />
       </div>
     </div>
   );

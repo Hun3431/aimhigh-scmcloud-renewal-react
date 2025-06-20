@@ -1,7 +1,9 @@
 import { useSetAtom } from "jotai";
-import { centerToastAtom } from "../../../../components/feedback/toast copy/atom";
+import { centerToastAtom } from "../../../../components/feedback/centerToast/atom";
 import Viewer from "../../../../components/viewer";
 import CodeBlock from "../../../../components/codeBlock";
+import SetCenterToastCode from "../../../../components/feedback/centerToast?raw";
+import SetCenterToastAtomCode from "../../../../components/feedback/centerToast/atom?raw";
 
 const toastCode = `import { useSetAtom } from "jotai";
 import { centerToastAtom } from "@/components/feedback/centerToast/atom";
@@ -70,6 +72,15 @@ const CenterToastPage = () => {
       <div className="flex flex-col gap-2 my-4">
         <CodeBlock title="Usage" path="example.tsx" code={toastCode} />
         <CodeBlock path="App.tsx" code={toastUsageCode} />
+        <CodeBlock
+          title="SetCenterToastCode"
+          path="components/feedback/centerToast?raw"
+          code={SetCenterToastCode}
+        />
+        <CodeBlock
+          path="components/feedback/centerToast/atom?raw"
+          code={SetCenterToastAtomCode}
+        />
       </div>
     </div>
   );

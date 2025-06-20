@@ -1,7 +1,7 @@
 import { Highlight, themes } from "prism-react-renderer";
 import { cn } from "cn-func";
 import { useSetAtom } from "jotai";
-import { centerToastAtom } from "../feedback/toast copy/atom";
+import { centerToastAtom } from "../feedback/centerToast/atom";
 
 const CodeBlock = ({
   title,

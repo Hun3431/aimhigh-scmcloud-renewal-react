@@ -2,6 +2,7 @@ import CodeBlock from "../../../../components/codeBlock";
 import Container from "../../../../components/component/container";
 import { FileIcon } from "../../../../components/icons/flowmate";
 import Viewer from "../../../../components/viewer";
+import SetContainerCode from "../../../../components/component/container?raw";
 
 const ContainerCode = `import Container from "@components/component/container";
 import { FileIcon } from "@components/icons/flowmate";
@@ -49,6 +50,11 @@ Container는 콘텐츠를 감싸고 스타일링을 적용하는 데 사용됩�
       </div>
       <div className="flex flex-col gap-2 my-4">
         <CodeBlock title="Usage" path="example.tsx" code={ContainerCode} />
+        <CodeBlock
+          title="SetContainerCode"
+          path="@components/component/container?raw"
+          code={SetContainerCode}
+        />
       </div>
     </div>
   );

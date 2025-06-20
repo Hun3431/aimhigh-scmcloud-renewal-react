@@ -2,6 +2,8 @@ import { useSetAtom } from "jotai";
 import { openDialogAtom } from "../../../../components/feedback/dialog/atom";
 import Viewer from "../../../../components/viewer";
 import CodeBlock from "../../../../components/codeBlock";
+import SetDialogCode from "../../../../components/feedback/dialog?raw";
+import SetDialogAtomCode from "../../../../components/feedback/dialog/atom?raw";
 
 const dialogCode = `import { useSetAtom } from "jotai";
 import { openDialogAtom } from "@components/feedback/dialog/atom";
@@ -76,6 +78,15 @@ const DialogPage = () => {
       <div className="flex flex-col gap-2 my-4">
         <CodeBlock title="Usage" path="example.tsx" code={dialogCode} />
         <CodeBlock path="App.tsx" code={dialogUsageCode} />
+        <CodeBlock
+          title="SetDialogCode"
+          path="components/feedback/dialog?raw"
+          code={SetDialogCode}
+        />
+        <CodeBlock
+          path="components/feedback/dialog/atom?raw"
+          code={SetDialogAtomCode}
+        />
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import { useSetAtom } from "jotai";
 import { openToastAtom } from "../../../../components/feedback/toast/atom";
 import Viewer from "../../../../components/viewer";
 import CodeBlock from "../../../../components/codeBlock";
+import SetToastCode from "../../../../components/feedback/toast?raw";
+import SetToastAtomCode from "../../../../components/feedback/toast/atom?raw";
 
 const toastCode = `import { useSetAtom } from "jotai";
 import { openToastAtom } from "@components/feedback/toast/atom";
@@ -94,6 +96,15 @@ const ToastPage = () => {
       <div className="flex flex-col gap-2 my-4">
         <CodeBlock title="Usage" path="example.tsx" code={toastCode} />
         <CodeBlock path="App.tsx" code={toastUsageCode} />
+        <CodeBlock
+          title="SetToastCode"
+          path="components/feedback/toast?raw"
+          code={SetToastCode}
+        />
+        <CodeBlock
+          path="components/feedback/toast/atom?raw"
+          code={SetToastAtomCode}
+        />
       </div>
     </div>
   );
