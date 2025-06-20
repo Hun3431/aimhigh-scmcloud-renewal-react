@@ -16,7 +16,7 @@ const Example = () => {
 
 const ButtonPage = () => {
   const [standard, setStandard] = useState<
-    "primary" | "secondary" | "tertiary" | "delete"
+    "primary" | "secondary" | "tertiary" | "quaternary" | "quinary"
   >("primary");
   const [size, setSize] = useState<"small" | "medium" | "large">("small");
 
@@ -36,14 +36,16 @@ const ButtonPage = () => {
                     | "primary"
                     | "secondary"
                     | "tertiary"
-                    | "delete"
+                    | "quaternary"
+                    | "quinary"
                 )
               }
             >
               <option value="primary">Primary</option>
               <option value="secondary">Secondary</option>
               <option value="tertiary">Tertiary</option>
-              <option value="delete">Delete</option>
+              <option value="quaternary">Quaternary</option>
+              <option value="quinary">Quinary</option>
             </select>
             <select
               className="py-1 rounded-sm outline outline-offset-2 outline-gray-300"

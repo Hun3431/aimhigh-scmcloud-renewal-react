@@ -3,7 +3,7 @@ import { cn } from "cn-func";
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  standard?: "primary" | "secondary" | "tertiary" | "delete";
+  standard?: "primary" | "secondary" | "tertiary" | "quaternary" | "quinary";
   size?: "small" | "medium" | "large";
   className?: string;
 }
@@ -17,10 +17,12 @@ const Button = ({
 }: ButtonProps) => {
   const standardStyle = {
     primary: "bg-[#007BFF] text-white",
-    secondary:
-      "outline-1 outline-offset-0 outline-gray-300 outline-dotted text-black ",
+    secondary: "bg-[#FF4D4F] text-white",
     tertiary: "outline outline-offset-0 outline-gray-300 bg-white text-black",
-    delete: "bg-[#FF4D4F] text-white",
+    quaternary:
+      "outline-1 outline-offset-0 outline-gray-300 outline-dotted text-black ",
+    quinary:
+      "bg-white outline outline-offset-0 outline-[#FF4D4F] text-[#211616]",
   };
   const sizeStyle = {
     small: "h-8",
