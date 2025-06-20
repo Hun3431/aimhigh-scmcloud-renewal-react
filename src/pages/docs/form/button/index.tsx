@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CodeBlock from "../../../../components/codeBlock";
 import Button from "../../../../components/form/button";
+import SetButtonCode from "../../../../components/form/button?raw";
 import Viewer from "../../../../components/viewer";
 
 const buttonCode = `import Button from "@components/form/button";
@@ -66,6 +67,11 @@ const ButtonPage = () => {
       </Viewer>
       <div className="flex flex-col gap-2 my-4">
         <CodeBlock title="Usage" path="example.tsx" code={buttonCode} />
+        <CodeBlock
+          title="SetButtonCode"
+          path="components/form/button/index.tsx"
+          code={SetButtonCode}
+        />
       </div>
     </div>
   );
