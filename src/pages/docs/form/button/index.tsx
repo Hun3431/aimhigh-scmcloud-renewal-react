@@ -23,7 +23,11 @@ const ButtonPage = () => {
 
   return (
     <div className="flex flex-col gap-2 pb-6">
-      <p className="mb-4 whitespace-pre-wrap"></p>
+      <p className="mb-4 whitespace-pre-wrap">
+        {`이 페이지는 버튼 컴포넌트의 사용 예시입니다. 버튼을 클릭하여 컴포넌트를 사용할 수 있습니다.
+해당 컴포넌트는 다양한 표준(Primary, Secondary 등)과 크기(Small, Medium, Large)를 지원합니다.
+버튼의 표준과 크기를 선택하여 다양한 스타일의 버튼을 확인할 수 있습니다.`}
+      </p>
 
       <div className="text-xl font-bold">Example</div>
       <Viewer

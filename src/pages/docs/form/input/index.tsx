@@ -27,7 +27,12 @@ const InputPage = () => {
 
   return (
     <div className="flex flex-col gap-2 pb-6">
-      <p className="mb-4 whitespace-pre-wrap"></p>
+      <p className="mb-4 whitespace-pre-wrap">
+        {`이 페이지는 Input 컴포넌트의 사용 예시입니다. Input 필드를 클릭하여 텍스트를 입력할 수 있습니다.
+해당 컴포넌트는 다양한 속성(placeholder, type 등)을 지원하며,
+disabled 및 readOnly 상태를 설정할 수 있습니다.
+Input 필드의 값을 변경하거나 disabled/readOnly 상태를 토글하여 다양한 동작을 확인할 수 있습니다.`}
+      </p>
 
       <div className="text-xl font-bold">Example</div>
       <Viewer

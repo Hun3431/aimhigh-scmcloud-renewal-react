@@ -21,7 +21,11 @@ const TagPage = () => {
 
   return (
     <div className="flex flex-col gap-2 pb-6">
-      <p className="mb-4 whitespace-pre-wrap"></p>
+      <p className="mb-4 whitespace-pre-wrap">
+        {`이 페이지는 Tag 컴포넌트의 사용 예시입니다. Tag를 클릭하여 다양한 크기와 모양을 확인할 수 있습니다.
+해당 컴포넌트는 크기(small, medium, large)와 모양(rounded 여부)을 설정할 수 있습니다.
+Tag의 크기와 모양을 선택하여 다양한 스타일의 Tag를 확인할 수 있습니다.`}
+      </p>
 
       <div className="text-xl font-bold">Example</div>
       <Viewer
