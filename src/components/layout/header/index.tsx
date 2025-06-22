@@ -1,6 +1,10 @@
 import { cn } from "cn-func";
+import { MenuIcon } from "../../icons/flowmate";
+import { menuOpen } from "../aside";
+import { useSetAtom } from "jotai";
 
 const Header = () => {
+  const setIsOpen = useSetAtom(menuOpen);
   const handleGithubClick = () => {
     window.open("https://github.com/Hun3431/aimhigh-scmcloud-renewal-react");
   };
@@ -8,13 +12,19 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "sticky top-0",
+        "sticky top-0 z-100",
         "flex flex-row justify-between items-center gap-4",
-        "min-w-2xs w-full max-w-7xl h-14 px-4",
+        "min-w-2xs w-full max-w-7xl h-14 pl-2 pr-4",
         "border-b xl:border-x border-gray-95 border-dotted"
       )}
     >
-      <div>Logo</div>
+      <div className="hidden sm:block">Logo</div>
+      <div
+        className="block sm:hidden p-2 rounded-lg hover:bg-gray-50"
+        onClick={() => setIsOpen(true)}
+      >
+        <MenuIcon size={24} />
+      </div>
       {/* <img
         src={"/favicon.ico"}
         alt="logo"
@@ -26,9 +36,9 @@ const Header = () => {
         <div className="w-full h-0.5 bg-gray-20 rounded-full" />
         <div className="w-full h-0.5 bg-gray-20 rounded-full" />
       </button>
-      <nav className="grow hidden sm:flex flex-row justify-start gap-4">
+      {/* <nav className="grow hidden sm:flex flex-row justify-start gap-4">
         <div>docs</div>
-      </nav>
+      </nav> */}
       {/* <button className="grow sm:grow-0 w-60 bg-gray-95 border border-gray-80 rounded-lg py-1 px-2 text-left text-sm text-gray-60">
         Search Documentation...
       </button> */}
