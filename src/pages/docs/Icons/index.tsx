@@ -141,6 +141,15 @@ const Example = () => {
 
 아래 아이콘을 클릭하면 사용방법을 확인할 수 있습니다.`}
       </p>
+      <div className="flex justify-center">
+        <a
+          className="px-4 py-2 bg-gray-100 rounded-lg"
+          href="/downloads/icons.zip"
+          download
+        >
+          Icon File Download
+        </a>
+      </div>
       <div className="relative max-h-6">
         <div className="flex items-center gap-1.5">
           아이콘 색상 :
