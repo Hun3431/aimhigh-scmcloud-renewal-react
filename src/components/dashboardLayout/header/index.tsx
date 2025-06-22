@@ -17,7 +17,7 @@ const Header = () => {
       className={cn(
         "sticky top-0 z-100",
         "flex flex-row justify-between items-center gap-4",
-        "min-w-6xl w-full h-[4.5rem] pr-4"
+        "min-w-7xl max-w-10xl w-full h-[4.5rem] pr-4"
       )}
     >
       <button

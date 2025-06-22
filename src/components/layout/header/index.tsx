@@ -2,13 +2,17 @@ import { cn } from "cn-func";
 import { MenuIcon } from "../../icons/flowmate";
 import { menuOpen } from "../aside";
 import { useSetAtom } from "jotai";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const setIsOpen = useSetAtom(menuOpen);
   const handleGithubClick = () => {
     window.open("https://github.com/Hun3431/aimhigh-scmcloud-renewal-react");
   };
-
+  const handleDashboardClick = () => {
+    navigate("/dashboard");
+  };
   return (
     <header
       className={cn(
@@ -17,40 +21,31 @@ const Header = () => {
         "min-w-2xs w-full max-w-7xl h-14 pl-2 pr-4"
       )}
     >
-      <div className="hidden sm:block">Logo</div>
+      <div className="hidden sm:block text-lg font-bold">AimHigh Document</div>
       <div
         className="block sm:hidden p-2 rounded-lg hover:bg-gray-50"
         onClick={() => setIsOpen(true)}
       >
         <MenuIcon size={24} />
       </div>
-      {/* <img
-        src={"/favicon.ico"}
-        alt="logo"
-        width={80}
-        className="mt-2 hidden sm:block"
-      /> */}
-      <button className="w-5 h-5 px-0.5 py-1 sm:hidden flex flex-col justify-between">
-        <div className="w-full h-0.5 bg-gray-20 rounded-full" />
-        <div className="w-full h-0.5 bg-gray-20 rounded-full" />
-        <div className="w-full h-0.5 bg-gray-20 rounded-full" />
-      </button>
-      {/* <nav className="grow hidden sm:flex flex-row justify-start gap-4">
-        <div>docs</div>
-      </nav> */}
-      {/* <button className="grow sm:grow-0 w-60 bg-gray-95 border border-gray-80 rounded-lg py-1 px-2 text-left text-sm text-gray-60">
-        Search Documentation...
-      </button> */}
-      <button
-        className="rounded-full hover:bg-gray-95"
-        onClick={handleGithubClick}
-      >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-          alt="github"
-          width={20}
-        />
-      </button>
+      <div className="flex gap-2 items-center">
+        <button
+          className="rounded-lg p-2 hover:bg-gray-50"
+          onClick={handleDashboardClick}
+        >
+          Dashboard
+        </button>
+        <button
+          className="rounded-lg p-2 hover:bg-gray-50"
+          onClick={handleGithubClick}
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+            alt="github"
+            width={20}
+          />
+        </button>
+      </div>
     </header>
   );
 };
