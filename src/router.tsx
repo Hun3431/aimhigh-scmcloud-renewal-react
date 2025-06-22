@@ -12,6 +12,16 @@ import CenterToastPage from "./pages/docs/feedback/centerToast";
 import ButtonPage from "./pages/docs/form/button";
 import InputPage from "./pages/docs/form/input";
 import TagPage from "./pages/docs/form/tag";
+import DashBoardMainPage from "./pages/dashboard";
+import DashboardLayout from "./components/dashboardLayout";
+import {
+  CodeIcon,
+  DocumentListIcon,
+  FileIcon,
+  FormIcon,
+  OpenBoxIcon,
+  TruckIcon,
+} from "./components/icons/flowmate";
 
 interface RouteType {
   name: string;
@@ -63,11 +73,48 @@ export const routes: RoutesType[] = [
   },
 ];
 
+interface DashboardRouteType extends RouteType {
+  icon: React.ReactNode;
+}
+
+export const dashboardRoute: DashboardRouteType[] = [
+  {
+    name: "status",
+    path: "/dashboard/status",
+    icon: <FormIcon size={14} />,
+  },
+  {
+    name: "request",
+    path: "/dashboard/request",
+    icon: <FileIcon size={14} />,
+  },
+  { name: "offer", path: "/dashboard/offer", icon: <FileIcon size={14} /> },
+  {
+    name: "order",
+    path: "/dashboard/order",
+    icon: <OpenBoxIcon size={14} />,
+  },
+  {
+    name: "logistics",
+    path: "/dashboard/logistics",
+    icon: <TruckIcon size={14} />,
+  },
+  {
+    name: "invoice",
+    path: "/dashboard/invoice",
+    icon: <DocumentListIcon size={14} />,
+  },
+  { name: "codes", path: "/dashboard/codes", icon: <CodeIcon size={14} /> },
+];
+
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="dashboard" element={<DashboardLayout />}>
+          <Route index element={<DashBoardMainPage />} />
+        </Route>
         <Route path="docs" element={<DefaultLayout />}>
           <Route index element={<Docs />} />
           <Route path="introduction" element={<Docs />} />
