@@ -22,6 +22,7 @@ import {
   OpenBoxIcon,
   TruckIcon,
 } from "./components/icons/flowmate";
+import DashboardRequestPage from "./pages/dashboard/request";
 
 interface RouteType {
   name: string;
@@ -114,6 +115,7 @@ const Router = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="dashboard" element={<DashboardLayout />}>
           <Route index element={<DashBoardMainPage />} />
+          <Route path="request" element={<DashboardRequestPage />} />
         </Route>
         <Route path="docs" element={<DefaultLayout />}>
           <Route index element={<Docs />} />
