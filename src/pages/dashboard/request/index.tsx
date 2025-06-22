@@ -5,7 +5,7 @@ import { cn } from "cn-func";
 const DashboardRequestPage = () => {
   return (
     <div className="px-2 pt-8 pb-4">
-      <div className="flex flex-col w-full p-4 bg-white rounded-lg border-2 border-gray-300">
+      <div className="flex flex-col gap-2 w-full p-4 bg-white rounded-lg border-2 border-gray-300">
         <div className="flex gap-4 items-center text-2xl font-bold">
           Request
           <span className="text-sm font-normal">견적 요청</span>
