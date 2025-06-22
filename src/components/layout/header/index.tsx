@@ -14,8 +14,7 @@ const Header = () => {
       className={cn(
         "sticky top-0 z-100",
         "flex flex-row justify-between items-center gap-4",
-        "min-w-2xs w-full max-w-7xl h-14 pl-2 pr-4",
-        "border-b xl:border-x border-gray-95 border-dotted"
+        "min-w-2xs w-full max-w-7xl h-14 pl-2 pr-4"
       )}
     >
       <div className="hidden sm:block">Logo</div>
