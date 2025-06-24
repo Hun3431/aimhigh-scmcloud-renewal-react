@@ -269,7 +269,7 @@ const RequestList = () => {
           onClick={() => {
             if (page > 0) {
               startIndex.current -= maxItems;
-              endIndex.current -= maxItems;
+              endIndex.current = startIndex.current + maxItems;
               setPage(page - 1);
             }
           }}
@@ -287,7 +287,7 @@ const RequestList = () => {
           onClick={() => {
             if (page < requestList.length / maxItems) {
               startIndex.current += maxItems;
-              endIndex.current += maxItems;
+              endIndex.current = startIndex.current + maxItems;
               setPage(page + 1);
             }
           }}
