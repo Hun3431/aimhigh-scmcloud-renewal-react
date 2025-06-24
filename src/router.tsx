@@ -116,6 +116,12 @@ const Router = () => {
         <Route path="dashboard" element={<DashboardLayout />}>
           <Route index element={<DashBoardMainPage />} />
           <Route path="request" element={<DashboardRequestPage />} />
+          <Route path="offer" element={<></>} />
+          <Route path="order" element={<></>} />
+          <Route path="logistics" element={<></>} />
+          <Route path="invoice" element={<></>} />
+          <Route path="codes" element={<></>} />
+          <Route path="status" element={<></>} />
         </Route>
         <Route path="docs" element={<DefaultLayout />}>
           <Route index element={<Docs />} />
