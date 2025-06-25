@@ -5,7 +5,7 @@ import Header from "./header";
 
 const DefaultLayout = () => {
   return (
-    <div className="flex flex-col w-full h-dvh">
+    <div className="flex flex-col w-full h-dvh overflow-x-scroll">
       <div className="flex flex-row justify-center w-full min-w-2xs">
         <Header />
       </div>
