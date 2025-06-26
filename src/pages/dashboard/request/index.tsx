@@ -1,16 +1,67 @@
 import { useEffect, useRef, useState } from "react";
 import ArrowIcon from "../../../components/icons/arrowIcon";
 import { cn } from "cn-func";
+import Button from "../../../components/form/button";
+import Input from "../../../components/form/input";
+import { CalendarIcon } from "../../../components/icons/flowmate";
+import { useNavigate } from "react-router-dom";
 
 const DashboardRequestPage = () => {
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState<boolean>(true);
+
+  const handleNewRequest = () => {
+    // Logic for creating a new request
+    navigate("/dashboard/request/new");
+  };
   return (
     <div className="px-2 pt-8 pb-4">
-      <div className="flex flex-col gap-2 w-full p-4 bg-white rounded-lg border-2 border-gray-300">
-        <div className="flex gap-4 items-center text-2xl font-bold">
-          Request
-          <span className="text-sm font-normal">견적 요청</span>
+      <div className="flex flex-col gap-4 w-full p-4 bg-white rounded-lg border-2 border-gray-300">
+        <div className="flex justify-between">
+          <div className="flex gap-4 items-center text-2xl font-bold">
+            Request
+            <span className="text-sm font-normal">견적 요청</span>
+          </div>
+          <div className="flex gap-2">
+            <Button onClick={handleNewRequest}>New Request</Button>
+            <Button onClick={handleNewRequest}>New Complex Request</Button>
+          </div>
         </div>
-        <div className=""></div>
+        <div>
+          <div
+            className={cn(
+              "grid grid-cols-2 gap-2",
+              "overflow-hidden duration-300",
+              isOpen ? "max-h-64" : "max-h-0"
+            )}
+          >
+            <div className="flex gap-2 my-1">
+              <select className="h-8 px-1 border border-gray-300 rounded-lg">
+                <option value="all">All</option>
+                <option value="general">General Requests</option>
+                <option value="complex">Complex Requests</option>
+              </select>
+              <Input placeholder="Search..." className="flex-1" />
+            </div>
+            <div className="flex gap-2 my-1">
+              <div className="flex-1 flex flex-row items-center justify-between px-2 border border-gray-300 rounded-lg text-gray-500">
+                <div>2024-10-30</div>
+                <CalendarIcon size={16} />
+              </div>
+              <div className="flex-1 flex flex-row items-center justify-between px-2 border border-gray-300 rounded-lg text-gray-500">
+                <div>2025-6-22</div>
+                <CalendarIcon size={16} />
+              </div>
+              <Button>Search</Button>
+            </div>
+          </div>
+          <div
+            className="flex justify-center items-center cursor-pointer text-gray-500"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <ArrowIcon direction={isOpen ? "up" : "down"} size={20} />
+          </div>
+        </div>
         <RequestList />
       </div>
     </div>

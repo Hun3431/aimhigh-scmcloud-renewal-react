@@ -30,7 +30,7 @@ const Input = ({
       className={cn(
         "flex-1 w-full",
         "max-h-8 px-3 py-1.5 rounded-md",
-        "outline outline-offset-0 outline-gray-300",
+        "outline -outline-offset-1 outline-gray-300",
         "focus:outline-2 focus:outline-[#007BFF]",
         "read-only:focus:outline-1 read-only:focus:outline-gray-300",
         "text-sm placeholder:text-gray-300",
