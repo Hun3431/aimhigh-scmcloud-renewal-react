@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import Button from "../../../../components/form/button";
 import Input from "../../../../components/form/input";
 import {
@@ -11,8 +10,6 @@ import {
 } from "../../../../components/icons/flowmate";
 
 const DashboardNewRequestPage = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="px-2 pt-8 pb-4">
       <div className="flex flex-col gap-8 w-full p-4 py-4 bg-white rounded-lg border-2 border-gray-300">
