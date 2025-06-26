@@ -23,6 +23,7 @@ import {
   TruckIcon,
 } from "./components/icons/flowmate";
 import DashboardRequestPage from "./pages/dashboard/request";
+import DashboardNewRequestPage from "./pages/dashboard/request/new";
 
 interface RouteType {
   name: string;
@@ -116,6 +117,7 @@ const Router = () => {
         <Route path="dashboard" element={<DashboardLayout />}>
           <Route index element={<DashBoardMainPage />} />
           <Route path="request" element={<DashboardRequestPage />} />
+          <Route path="request/new" element={<DashboardNewRequestPage />} />
           <Route path="offer" element={<></>} />
           <Route path="order" element={<></>} />
           <Route path="logistics" element={<></>} />
